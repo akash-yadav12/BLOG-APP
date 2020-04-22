@@ -1,0 +1,17 @@
+i.icon {
+	font-size: 2em;
+}
+.container.main{
+	margin-top: 7.0em;
+}
+#delete{
+	display:inline;
+}
+
+i.icon.chevron{
+	line-height:25px;
+}
+
+a.ui.floated{
+	padding-bottom:15px;
+}
