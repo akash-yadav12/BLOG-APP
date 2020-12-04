@@ -1,5 +1,5 @@
 <%- include("partials/header.ejs") %>
-<div class="ui main text container segment">
+<div class="ui main text container segment" style="height: 100vh;">
 	<div class="ui huge header"><%= blog.title %></div>
 	<div class="ui top attached ">
 		<div class="item">
@@ -10,12 +10,12 @@
 			<div class="description">
 				<P><%- blog.body %></P>
 			</div>
-			<a class="ui blue inverted button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+			<!-- <a class="ui blue inverted button" href="/blogs/<%= blog._id %>/edit">Edit</a>
 			<form id="delete" action="/blogs/<%=blog._id %>?_method=DELETE" method="POST">
 				<button class="ui red inverted button">
 					Delete
 				</button>
-			</form>
+			</form> -->
 		</div>
 	</div>
 </div>
