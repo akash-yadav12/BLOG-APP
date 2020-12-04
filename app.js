@@ -6,8 +6,19 @@ methodOverride  = require("method-override"),
 app             = express();
 
 //app config
-mongoose.set("useUnifiedTopology",true);
-mongoose.connect("mongodb://localhost/restful_blog_app",{useNewUrlParser:true});
+// mongoose.set("useUnifiedTopology",true);
+// mongoose.connect("mongodb://localhost/restful_blog_app",{useNewUrlParser:true});
+mongoose.set('useUnifiedTopology',true);
+
+mongoose.connect("mongodb+srv://akash_ry:fypVh91bcDOj9sB3@cluster0.ell11.mongodb.net/blog-app?retryWrites=true&w=majority", {useNewUrlParser:true})
+  .then(()=>{
+    console.log('Connected to database')
+  })
+  .catch((err)=>{
+    console.log('failed',err)
+  })
+
+
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
