@@ -5,12 +5,18 @@ expressSanitizer= require("express-sanitizer"),
 methodOverride  = require("method-override"),
 app             = express();
 
+
+if (process.env.NODE_ENV !== "production"){
+	require('dotenv').config()
+}
+
+const dbUrl = process.env.db_url || "mongodb://localhost/restful_blog_app"
 //app config
 // mongoose.set("useUnifiedTopology",true);
-// mongoose.connect("mongodb://localhost/restful_blog_app",{useNewUrlParser:true});
+// mongoose.connect(,{useNewUrlParser:true});
 mongoose.set('useUnifiedTopology',true);
 
-mongoose.connect("mongodb+srv://akash_ry:fypVh91bcDOj9sB3@cluster0.ell11.mongodb.net/blog-app?retryWrites=true&w=majority", {useNewUrlParser:true})
+mongoose.connect(dbUrl, {useNewUrlParser:true})
   .then(()=>{
     console.log('Connected to database')
   })
