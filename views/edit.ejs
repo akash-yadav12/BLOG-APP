@@ -1,5 +1,5 @@
 <%- include("partials/header.ejs") %>
-<div class="ui main text container segment">
+<div class="ui main text container segment" style="">
 	<div class="ui huge header">EDIT <%= blog.title %></div>
 	<form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
 		<div class="field">
@@ -14,7 +14,7 @@
 			<label>Blog Content</label>
 			<textarea name="blog[body]"><%= blog.body %></textarea>
 		</div>
-		<input class="ui big violet inverted button" type="submit">
+		<input class="ui big violet inverted button" type="submit" value="Update">
 
 	</form>
 </div>
